@@ -58,6 +58,7 @@ namespace SkillsWorkflow.Services.ADBlocker
                 if (MustRunDailyTask(taskConfig))
                     await RunDailyTaskAsync();
                 await RunScheduledTaskAsync();
+                await UpdateTaskRuntimeAsync();
             }
             catch (Exception ex)
             {
@@ -99,6 +100,12 @@ namespace SkillsWorkflow.Services.ADBlocker
             var dateNow = DateTime.UtcNow;
             var alertOn = new DateTime(dateNow.Year, dateNow.Month, dateNow.Day, alertTime.Hours, alertTime.Minutes, 0);
             return alertOn > taskConfiguration.DailyTaskRunnedAt && dateNow > alertOn;
+        }
+
+        private static async Task UpdateTaskRuntimeAsync()
+        {
+            var response = await _client.PostAsync("api/blockedloginrequests/taskruntime", new StringContent(""));
+            response.EnsureSuccessStatusCode();
         }
 
         private static async Task RunDailyTaskAsync()
