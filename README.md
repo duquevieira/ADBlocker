@@ -25,14 +25,14 @@ On premises agent to block and unblock users on the Active Directory based on mi
 
 <h3>ADBlocker Settings</h3>
 <ol>
-<li>Active Directory
+<li><strong>Active Directory</strong>
 <ul>
 <li><strong>AD:Domain</strong> - This setting should be parametrized with the Active Directory domain.</li>
 <li><strong>AD:User</strong> - Active Directory User Username. This user should have permissions to block/unblock users from the Active Directory.</li>
 <li><strong>AD:Password</strong> - Active Directory User password.</li>
 </ul>
 </li>
-<li>SkillsWorkflow
+<li><strong>SkillsWorkflow</strong>
 <ul>
 <li><strong>Skills:ApiUrl</strong> - SkillsWorkflow Api base url.</li>
 <li><strong>Skills:AppId</strong> - SkillsWorkflow Tenant application id. This id must be requested to SkillsWorkflow team. It will be used to ensure comunication with SkillsWorkflow api.</li>
@@ -41,7 +41,7 @@ On premises agent to block and unblock users on the Active Directory based on mi
 <li><strong>Skills:Environment</strong> - AdBlocker application environment settings. When set to Local it will disable SSL certificate validations and application errors will be registered accordingly. To use SSL certificate validation use <strong>"Production"</strong> mode.</li>
 </ul>
 </li>
-<li>Raygun
+<li><strong>Raygun</strong>
 <ul>
 <li><strong>Raygun:JobName</strong> - Parameter used to group information in Raygun logging platform. Default value is "ADBlocker".</li>
 <li><strong>Raygun:AppKey</strong> - Raygun platform access key. This key must be requested to SkillsWorkflow team. </li>
